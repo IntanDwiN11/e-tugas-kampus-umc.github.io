@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Tugas Kampus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">E-Tugas <span>Kampus</span></div>
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <span class="label">PLATFORM AKADEMIK DIGITAL</span>
+            <h1>Pengumpulan Tugas<br>
+                Lebih Mudah dan <span>Terorganisir</span>
+            </h1>
+            <p>
+                Platform digital untuk membantu mahasiswa
+                mengumpulkan tugas dan dosen mengelola
+                tugas perkuliahan dengan lebih praktis.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="login.html" class="btn-primary">
+                    Mulai Sekarang
+                </a>
+                <a href="#tentang" class="btn-secondary">
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="illustration">
+                <div class="illustration-icon">📚</div>
+                <h3>E-Tugas Kampus</h3>
+                <p>Belajar lebih teratur</p>
+                <div class="task-item">✓ Tugas Matematika</div>
+                <div class="task-item">✓ Tugas Pemrograman</div>
+                <div class="task-item">✓ Tugas Basis Data</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="tentang">
+        <div class="section-heading">
+            <h2>Fitur Utama</h2>
+            <p>Semua kebutuhan pengumpulan tugas dalam satu platform.</p>
+        </div>
+
+        <div class="feature-container">
+            <div class="feature-card">
+                <div class="feature-icon">📤</div>
+                <h3>Pengumpulan Tugas</h3>
+                <p>Mahasiswa dapat mengumpulkan tugas secara online.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Manajemen Tugas</h3>
+                <p>Dosen dapat membuat dan mengelola tugas perkuliahan.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Status Pengumpulan</h3>
+                <p>Pantau status tugas dan hasil penilaian.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 E-Tugas Kampus. Semua Hak Dilindungi.</p>
+    </footer>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Tugas Kampus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <a href="index.html" class="back-home">← Kembali ke Beranda</a>
+
+        <div class="login-card">
+            <div class="login-logo">📚</div>
+
+            <h2>E-Tugas Kampus</h2>
+            <p class="login-description">
+                Silakan masuk ke akun Anda
+            </p>
+
+            <form id="loginForm">
+
+                <label>Login Sebagai</label>
+                <select id="role" required>
+                    <option value="">Pilih pengguna</option>
+                    <option value="mahasiswa">Mahasiswa</option>
+                    <option value="dosen">Dosen</option>
+                </select>
+
+                <label>Username</label>
+                <input type="text" id="username"
+                    placeholder="Masukkan username" required>
+
+                <label>Password</label>
+                <input type="password" id="password"
+                    placeholder="Masukkan password" required>
+
+                <button type="submit" class="login-submit">
+                    Masuk Sekarang
+                </button>
+
+                <p id="loginMessage"></p>
+            </form>
+
+            <p class="login-footer">
+                © 2026 E-Tugas Kampus
+            </p>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
+

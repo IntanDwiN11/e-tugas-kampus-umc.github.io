@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa - E-Tugas Kampus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <h2>E-Tugas <span>Kampus</span></h2>
+
+        <div class="user-info">
+            <div class="user-avatar">M</div>
+            <div>
+                <strong>Mahasiswa</strong>
+                <small>Mahasiswa</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="mahasiswa.html" class="active">🏠 Dashboard</a>
+            <a href="#daftar-tugas">📚 Daftar Tugas</a>
+            <a href="#riwayat">📋 Riwayat Pengumpulan</a>
+            <a href="#profil">👤 Profil</a>
+        </nav>
+
+        <a href="index.html" class="logout-btn"
+           onclick="localStorage.removeItem('currentUser')">
+            ↪ Keluar
+        </a>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard Mahasiswa</h1>
+                <p>Selamat datang di E-Tugas Kampus!</p>
+            </div>
+            <div class="header-date" id="tanggal"></div>
+        </header>
+
+        <section class="welcome-box">
+            <div>
+                <h2>Halo, Mahasiswa! 👋</h2>
+                <p>
+                    Jangan lupa periksa tugas dan kumpulkan
+                    sebelum batas waktu berakhir.
+                </p>
+            </div>
+            <div class="welcome-icon">🎓</div>
+        </section>
+
+        <section class="stat-container">
+            <div class="stat-card">
+                <span>📚 Total Tugas</span>
+                <h2 id="totalTugas">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>⏳ Belum Dikumpulkan</span>
+                <h2 id="belumTugas">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>📤 Sudah Dikumpulkan</span>
+                <h2 id="sudahTugas">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>⭐ Sudah Dinilai</span>
+                <h2 id="dinilaiTugas">0</h2>
+            </div>
+        </section>
+
+        <section class="task-section" id="daftar-tugas">
+            <div class="section-title">
+                <h2>Daftar Tugas Terbaru</h2>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Tugas</th>
+                            <th>Mata Kuliah</th>
+                            <th>Deadline</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="taskTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+<section class="task-section" id="kumpulkan">
+    <div class="section-title">
+        <h2>📤 Kumpulkan Tugas</h2>
+        <p>Silakan pilih tugas dan unggah file pekerjaan kamu.</p>
+    </div>
+
+    <form id="formPengumpulan" class="task-form">
+
+        <label>Pilih Tugas</label>
+        <select id="pilihTugas" required>
+            <option value="">Pilih tugas</option>
+        </select>
+
+        <label>Upload File Tugas</label>
+        <input type="file" id="fileTugas"
+            accept=".pdf,.doc,.docx,.zip" required>
+
+        <label>Keterangan</label>
+        <textarea id="keterangan"
+            rows="4"
+            placeholder="Tambahkan keterangan tugas..."></textarea>
+
+        <button type="submit" class="login-submit">
+            Kirim Tugas
+        </button>
+
+        <p id="pesanPengumpulan"></p>
+    </form>
+</section>
+
+
+        <section class="task-section" id="profil">
+            <div class="section-title">
+                <h2>Informasi Akun</h2>
+            </div>
+            <div class="profile-box">
+                <p>Nama: <strong id="namaMahasiswa">Mahasiswa</strong></p>
+                <p>Peran: <strong>Mahasiswa</strong></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/mahasiswa.js"></script>
+</body>
+</html>

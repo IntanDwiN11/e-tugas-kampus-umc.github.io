@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dosen - E-Tugas Kampus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <h2>E-Tugas <span>Kampus</span></h2>
+
+        <div class="user-info">
+            <div class="user-avatar">D</div>
+            <div>
+                <strong>Dosen</strong>
+                <small>Pengajar</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dosen.html" class="active">🏠 Dashboard</a>
+            <a href="#buat-tugas">➕ Buat Tugas</a>
+            <a href="#daftar-tugas">📚 Daftar Tugas</a>
+            <a href="#pengumpulan">📋 Pengumpulan Mahasiswa</a>
+        </nav>
+
+        <a href="index.html" class="logout-btn"
+           onclick="localStorage.removeItem('currentUser')">
+            ↪ Keluar
+        </a>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard Dosen</h1>
+                <p>Kelola tugas dan pengumpulan mahasiswa.</p>
+            </div>
+            <div class="header-date" id="tanggalDosen"></div>
+        </header>
+
+        <section class="welcome-box">
+            <div>
+                <h2>Selamat Datang, Dosen! 👋</h2>
+                <p>Kelola tugas perkuliahan dengan lebih mudah.</p>
+            </div>
+            <div class="welcome-icon">👨‍🏫</div>
+        </section>
+
+        <section class="stat-container">
+            <div class="stat-card">
+                <span>📚 Total Tugas</span>
+                <h2 id="jumlahTugas">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>📤 Total Pengumpulan</span>
+                <h2 id="jumlahPengumpulan">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>📝 Tugas Aktif</span>
+                <h2 id="tugasAktif">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>⭐ Sudah Dinilai</span>
+                <h2 id="jumlahDinilai">0</h2>
+            </div>
+        </section>
+
+        <section class="task-section" id="buat-tugas">
+            <div class="section-title">
+                <h2>➕ Buat Tugas Baru</h2>
+            </div>
+
+            <form id="formTugas" class="task-form">
+                <label>Nama Tugas</label>
+                <input type="text" id="namaTugas"
+                    placeholder="Contoh: Membuat Makalah" required>
+
+                <label>Mata Kuliah</label>
+                <input type="text" id="mataKuliah"
+                    placeholder="Contoh: Pemrograman Web" required>
+
+                <label>Deskripsi Tugas</label>
+                <textarea id="deskripsiTugas"
+                    placeholder="Masukkan instruksi tugas..."
+                    rows="4" required></textarea>
+
+                <label>Deadline</label>
+                <input type="date" id="deadlineTugas" required>
+
+                <button type="submit" class="login-submit">
+                    Publikasikan Tugas
+                </button>
+
+                <p id="pesanTugas"></p>
+            </form>
+        </section>
+
+        <section class="task-section" id="daftar-tugas">
+            <div class="section-title">
+                <h2>Daftar Tugas</h2>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Tugas</th>
+                            <th>Mata Kuliah</th>
+                            <th>Deadline</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daftarTugasDosen"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="task-section" id="pengumpulan">
+            <div class="section-title">
+                <h2>Pengumpulan Mahasiswa</h2>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Mahasiswa</th>
+                            <th>Nama Tugas</th>
+                            <th>File</th>
+                            <th>Status Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataPengumpulan"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/dosen.js"></script>
+</body>
+</html>
